@@ -2119,7 +2119,7 @@ namespace Renci.SshNet
 
             //  Send port
             SocketWriteByte((byte)(ConnectionInfo.Port / 0xFF));
-            SocketWriteByte((byte)(ConnectionInfo.Port % 0xFF));
+            SocketWriteByte((byte)(ConnectionInfo.Port & 0xFF));
 
             //  Read Server SOCKS5 version
             if (SocketReadByte() != 5)
